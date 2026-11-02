@@ -1,0 +1,127 @@
+{
+  "alert_capacity_fractions": [
+    0.001,
+    0.0025,
+    0.005
+  ],
+  "candidate_results": {
+    "balanced_logistic": {
+      "average_precision": 0.7723236882981208,
+      "capacity_metrics": {
+        "0.0010": {
+          "alert_count": 57,
+          "alert_fraction": 0.001,
+          "alert_rate": 0.001000631978091426,
+          "fraud_captured": 42,
+          "fraud_count": 57,
+          "minimum_alert_score": 0.9999434013145285,
+          "precision": 0.7368421052631579,
+          "recall": 0.7368421052631579
+        },
+        "0.0025": {
+          "alert_count": 143,
+          "alert_fraction": 0.0025,
+          "alert_rate": 0.0025103574187205955,
+          "fraud_captured": 45,
+          "fraud_count": 57,
+          "minimum_alert_score": 0.9673670944465402,
+          "precision": 0.3146853146853147,
+          "recall": 0.7894736842105263
+        },
+        "0.0050": {
+          "alert_count": 285,
+          "alert_fraction": 0.005,
+          "alert_rate": 0.005003159890457131,
+          "fraud_captured": 48,
+          "fraud_count": 57,
+          "minimum_alert_score": 0.906586652323097,
+          "precision": 0.16842105263157894,
+          "recall": 0.8421052631578947
+        }
+      },
+      "prevalence": 0.001000631978091426,
+      "roc_auc": 0.9709048219332311
+    },
+    "weighted_hist_gradient_boosting": {
+      "average_precision": 0.7791584467812305,
+      "capacity_metrics": {
+        "0.0010": {
+          "alert_count": 57,
+          "alert_fraction": 0.001,
+          "alert_rate": 0.001000631978091426,
+          "fraud_captured": 44,
+          "fraud_count": 57,
+          "minimum_alert_score": 0.6037212567096366,
+          "precision": 0.7719298245614035,
+          "recall": 0.7719298245614035
+        },
+        "0.0025": {
+          "alert_count": 143,
+          "alert_fraction": 0.0025,
+          "alert_rate": 0.0025103574187205955,
+          "fraud_captured": 46,
+          "fraud_count": 57,
+          "minimum_alert_score": 0.07963291748247267,
+          "precision": 0.32167832167832167,
+          "recall": 0.8070175438596491
+        },
+        "0.0050": {
+          "alert_count": 285,
+          "alert_fraction": 0.005,
+          "alert_rate": 0.005003159890457131,
+          "fraud_captured": 47,
+          "fraud_count": 57,
+          "minimum_alert_score": 0.021569379788060714,
+          "precision": 0.1649122807017544,
+          "recall": 0.8245614035087719
+        }
+      },
+      "prevalence": 0.001000631978091426,
+      "roc_auc": 0.972630321124124
+    }
+  },
+  "feature_columns": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "model_file": "model.joblib",
+  "model_sha256": "44dc637fd96cf246a3ee87df66759218bcca04967d9196c4a008b56d8eb62303",
+  "protocol_sha256": "a3da33cb2cf3ed0f6e1e76c96f7295bdd2488da6884e6b4927e325f161d496d1",
+  "repository_commit": "09b1703ace57a7a3753a3d6961bbb14536d48b7e",
+  "selected_model": "weighted_hist_gradient_boosting",
+  "selection_metric": "validation average precision",
+  "source_sha256": "b7efcb35a428bbe22347a05d2437d9177bab07ce61e51214a17bec584ad9496d",
+  "status": "selected_on_validation",
+  "train_rows": 170882,
+  "train_time_max_seconds": 120395.0,
+  "validation_rows": 56964,
+  "validation_time_max_seconds": 145248.0,
+  "validation_time_min_seconds": 120396.0
+}

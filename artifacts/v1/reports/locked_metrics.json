@@ -1,0 +1,87 @@
+{
+  "evaluation_status": "locked_test",
+  "exact_duplicate_sensitivity": {
+    "average_precision": 0.795883692135985,
+    "capacity_metrics": {
+      "0.0010": {
+        "alert_count": 57,
+        "alert_fraction": 0.001,
+        "alert_rate": 0.0010049365303244006,
+        "fraud_captured": 51,
+        "fraud_count": 74,
+        "minimum_alert_score": 0.9826515405630001,
+        "precision": 0.8947368421052632,
+        "recall": 0.6891891891891891
+      },
+      "0.0025": {
+        "alert_count": 142,
+        "alert_fraction": 0.0025,
+        "alert_rate": 0.0025035260930888576,
+        "fraud_captured": 61,
+        "fraud_count": 74,
+        "minimum_alert_score": 0.09748119660575125,
+        "precision": 0.4295774647887324,
+        "recall": 0.8243243243243243
+      },
+      "0.0050": {
+        "alert_count": 284,
+        "alert_fraction": 0.005,
+        "alert_rate": 0.005007052186177715,
+        "fraud_captured": 63,
+        "fraud_count": 74,
+        "minimum_alert_score": 0.019636136729903157,
+        "precision": 0.22183098591549297,
+        "recall": 0.8513513513513513
+      }
+    },
+    "collapsed_exact_rows": 241,
+    "fraud_count": 74,
+    "prevalence": 0.001304654442877292,
+    "roc_auc": 0.974257264891202,
+    "test_rows": 56720
+  },
+  "metrics": {
+    "average_precision": 0.7989471779596176,
+    "capacity_metrics": {
+      "0.0010": {
+        "alert_count": 57,
+        "alert_fraction": 0.001,
+        "alert_rate": 0.0010006846789908884,
+        "fraud_captured": 51,
+        "fraud_count": 75,
+        "minimum_alert_score": 0.9846983837873988,
+        "precision": 0.8947368421052632,
+        "recall": 0.68
+      },
+      "0.0025": {
+        "alert_count": 143,
+        "alert_fraction": 0.0025,
+        "alert_rate": 0.002510489633257843,
+        "fraud_captured": 62,
+        "fraud_count": 75,
+        "minimum_alert_score": 0.09748119660575125,
+        "precision": 0.43356643356643354,
+        "recall": 0.8266666666666667
+      },
+      "0.0050": {
+        "alert_count": 285,
+        "alert_fraction": 0.005,
+        "alert_rate": 0.005003423394954442,
+        "fraud_captured": 64,
+        "fraud_count": 75,
+        "minimum_alert_score": 0.019944165276150116,
+        "precision": 0.22456140350877193,
+        "recall": 0.8533333333333334
+      }
+    },
+    "prevalence": 0.0013166903670932743,
+    "roc_auc": 0.9745815607823834,
+    "test_rows": 56961,
+    "test_time_max_seconds": 172792.0,
+    "test_time_min_seconds": 145249.0
+  },
+  "model_sha256": "44dc637fd96cf246a3ee87df66759218bcca04967d9196c4a008b56d8eb62303",
+  "selected_model": "weighted_hist_gradient_boosting",
+  "selection_metric": "validation average precision",
+  "source_sha256": "b7efcb35a428bbe22347a05d2437d9177bab07ce61e51214a17bec584ad9496d"
+}

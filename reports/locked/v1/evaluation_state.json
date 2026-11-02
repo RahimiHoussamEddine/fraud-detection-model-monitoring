@@ -1,0 +1,13 @@
+{
+  "completed_at_utc": "2026-11-02T17:22:24.924554+00:00",
+  "locked_metrics_sha256": "eab52f307a27785bbe31c9b885e67438240b93b5cd0f6ca26858b2c223bb6b3e",
+  "model_sha256": "44dc637fd96cf246a3ee87df66759218bcca04967d9196c4a008b56d8eb62303",
+  "monitoring_sha256": "770093798cdd611e4fefa270a9aed0fe0b259c9cc17dc093ae919252b6d3d64b",
+  "protocol_sha256": "a3da33cb2cf3ed0f6e1e76c96f7295bdd2488da6884e6b4927e325f161d496d1",
+  "selected_model": "weighted_hist_gradient_boosting",
+  "selection_manifest_sha256": "77653b3d732a731a30a34959f80fe53e48c66126c81478476bd3fbbe21851ba6",
+  "source_sha256": "b7efcb35a428bbe22347a05d2437d9177bab07ce61e51214a17bec584ad9496d",
+  "started_at_utc": "2026-11-02T17:22:23.865868+00:00",
+  "status": "completed",
+  "test_evaluation_attempt": 1
+}

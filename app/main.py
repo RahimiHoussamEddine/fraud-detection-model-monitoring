@@ -54,7 +54,7 @@ st.plotly_chart(
         color="candidate",
         title="Candidate ranking quality on validation data",
     ),
-    use_container_width=True,
+    width="stretch",
 )
 st.caption(f"Selected on validation average precision: `{selection['selected_model']}`.")
 
@@ -87,9 +87,9 @@ else:
             markers=True,
             title="Distribution drift relative to training data",
         ),
-        use_container_width=True,
+        width="stretch",
     )
-    st.dataframe(chart_data, use_container_width=True, hide_index=True)
+    st.dataframe(chart_data, width="stretch", hide_index=True)
     st.caption("PSI 0.10/0.25 thresholds are heuristic review triggers, not universal guarantees.")
 
 st.info(

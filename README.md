@@ -7,9 +7,8 @@ feature/score drift monitoring.
 
 ## Project status
 
-**In progress.** Dataset acquisition is underway. Locked model results and
-operating thresholds will be published only after the full temporal pipeline
-has been validated.
+**Validated v1 release.** The one-shot chronological test, monitoring report,
+and serving artifact are built and verified locally.
 
 ## What this project will demonstrate
 
@@ -25,6 +24,30 @@ has been validated.
 
 Overall accuracy is not used as a success metric. The model output is a
 prioritization score, not a claim that a transaction is definitively fraudulent.
+
+## Locked v1 results
+
+The weighted histogram gradient-boosting candidate was selected on validation
+average precision (0.7792 versus 0.7723 for balanced logistic regression). On
+the later chronological test window, it scored 56,961 transactions with 75
+frauds: average precision was 0.7989 and ROC-AUC was 0.9746.
+
+| Review budget | Alerts | Frauds captured | Precision | Recall |
+|---|---:|---:|---:|---:|
+| 0.10% | 57 | 51 / 75 | 89.5% | 68.0% |
+| 0.25% (primary) | 143 | 62 / 75 | 43.4% | 82.7% |
+| 0.50% | 285 | 64 / 75 | 22.5% | 85.3% |
+
+Collapsing exact repeated rows in the locked test changed average precision to
+0.7959 and primary-budget recall to 82.4%, a small sensitivity for this split.
+The primary run retains all rows because the source has no transaction IDs.
+
+The test window contains two four-hour monitoring batches. The later batch's
+average precision fell to 0.6503 from 0.8652 in the first batch. Several feature
+PSI values exceeded 1.0, while score PSI remained below 0.008 in both batches.
+This shows why feature drift and score/performance monitoring are reported
+separately; the later batch contains only 21 frauds, and the benchmark spans
+only two days.
 
 ## Data
 

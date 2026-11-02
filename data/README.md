@@ -18,7 +18,8 @@
 
 The benchmark is attributed to Andrea Dal Pozzolo, Olivier Caelen, and Gianluca
 Bontempi, with a requested citation to Dal Pozzolo et al., *Calibrating
-Probability with Undersampling for Unbalanced Classification*, IEEE CIDM 2015.
+Probability with Undersampling for Unbalanced Classification*, IEEE SSCI 2015
+([IEEE Xplore](https://doi.org/10.1109/SSCI.2015.33)).
 The catalog marks the dataset public. The project does not redistribute raw
 data; keep the downloaded file in this ignored directory and use the upstream
 record for access and terms.

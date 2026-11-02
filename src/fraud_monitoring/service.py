@@ -7,6 +7,7 @@ from pathlib import Path
 
 import joblib
 import numpy as np
+import pandas as pd
 
 from fraud_monitoring.io import sha256_file
 from fraud_monitoring.models import fraud_scores
@@ -45,6 +46,9 @@ class FraudScoringService:
             )
         if getattr(self.model, "n_features_in_", None) != len(self.feature_columns):
             raise ArtifactValidationError("Model input dimension differs from the feature schema")
+        model_features = getattr(self.model, "feature_names_in_", None)
+        if model_features is None or list(model_features) != self.feature_columns:
+            raise ArtifactValidationError("Model feature names differ from the artifact schema")
         model_classes = getattr(self.model, "classes_", None)
         if model_classes is None or set(model_classes) != {0, 1}:
             raise ArtifactValidationError("Model must expose both binary target classes")
@@ -64,7 +68,8 @@ class FraudScoringService:
             raise ValueError("All input features must be finite numbers")
         if features["Amount"] < 0:
             raise ValueError("Amount must be nonnegative")
-        return float(fraud_scores(self.model, values.reshape(1, -1))[0])
+        feature_frame = pd.DataFrame([features], columns=self.feature_columns)
+        return float(fraud_scores(self.model, feature_frame)[0])
 
     def smoke_check(self) -> list[dict]:
         payload = json.loads(self.smoke_path.read_text())

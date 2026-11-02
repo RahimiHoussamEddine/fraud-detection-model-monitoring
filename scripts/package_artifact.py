@@ -3,10 +3,11 @@ from __future__ import annotations
 import argparse
 import json
 import shutil
+import subprocess
 from pathlib import Path
 
 import joblib
-import numpy as np
+import pandas as pd
 
 from fraud_monitoring.io import atomic_json, sha256_file
 from fraud_monitoring.models import fraud_scores
@@ -87,7 +88,7 @@ def main() -> None:
     smoke_features.append(("mixed_components", third))
     queries = []
     for query_id, features in smoke_features:
-        vector = np.asarray([[features[name] for name in feature_columns]], dtype=np.float64)
+        vector = pd.DataFrame([features], columns=feature_columns)
         queries.append(
             {
                 "query_id": query_id,
@@ -114,6 +115,9 @@ def main() -> None:
         "selected_model": selection["selected_model"],
         "selection_metric": selection["selection_metric"],
         "repository_commit": selection["repository_commit"],
+        "serving_commit": subprocess.run(
+            ["git", "rev-parse", "HEAD"], check=True, capture_output=True, text=True
+        ).stdout.strip(),
         "feature_columns": feature_columns,
         "model_file": model_path.name,
         "model_sha256": sha256_file(model_path),

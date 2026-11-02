@@ -3,6 +3,7 @@ import asyncio
 import httpx
 import joblib
 import numpy as np
+import pandas as pd
 import pytest
 from sklearn.linear_model import LogisticRegression
 
@@ -19,12 +20,12 @@ def _artifact(directory):
     x[:, 0] = [-2, -1, -0.5, 0, 0.5, 1, 2, 3]
     x[:, -1] = [2, 3, 4, 5, 6, 7, 8, 9]
     y = np.array([0, 0, 0, 0, 1, 1, 1, 1], dtype=np.int8)
-    model = LogisticRegression(random_state=1).fit(x, y)
+    model = LogisticRegression(random_state=1).fit(pd.DataFrame(x, columns=FEATURES), y)
     model_path = directory / "model.joblib"
     joblib.dump(model, model_path)
     features = {name: 0.0 for name in FEATURES}
     features["Amount"] = 10.0
-    expected = float(fraud_scores(model, np.asarray([list(features.values())]))[0])
+    expected = float(fraud_scores(model, pd.DataFrame([features], columns=FEATURES))[0])
     smoke_path = directory / "smoke_queries.json"
     atomic_json(
         smoke_path,

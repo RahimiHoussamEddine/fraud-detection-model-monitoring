@@ -1,0 +1,24 @@
+{
+  "amount_max": 25691.16,
+  "amount_median": 22.0,
+  "amount_min": 0.0,
+  "columns": 31,
+  "exact_duplicate_extras_by_class": {
+    "0": 1062,
+    "1": 19
+  },
+  "exact_duplicate_groups": 773,
+  "exact_duplicate_rows_beyond_first": 1081,
+  "exact_duplicate_rows_including_first": 1854,
+  "fraud_count": 492,
+  "fraud_rate": 0.001727485630620034,
+  "identical_model_feature_groups": 5149,
+  "identical_model_feature_rows_beyond_first": 9144,
+  "legitimate_count": 284315,
+  "missing_cells": 0,
+  "model_feature_groups_with_conflicting_labels": 0,
+  "rows": 284807,
+  "time_max_seconds": 172792.0,
+  "time_min_seconds": 0.0,
+  "unique_time_values": 124592
+}

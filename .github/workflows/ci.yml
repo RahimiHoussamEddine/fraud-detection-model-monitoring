@@ -1,0 +1,26 @@
+name: Quality and artifact checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - run: make install
+      - run: make quality
+      - run: make smoke-release
+      - run: make verify-artifact
+      - run: docker build --tag fraud-detection-model-monitoring:ci .
